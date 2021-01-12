@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import Layout from '../components/Layout';
 
@@ -7,7 +6,6 @@ export default function Tarot() {
       return fetch(url).then(r => r.json());
     }
 
-    const { query } = useRouter();
     const { data, error } = useSWR('/api/tarot', fetcher);
   
     const name = data?.name;
@@ -57,15 +55,13 @@ export default function Tarot() {
             <div className='heading'><h1>{number}</h1></div>
             <div className='heading'><h2>{name}</h2></div>
             <div style={{textAlign:"center"}}><h5>{fortuneList}</h5></div>
+            <div className=''><b>Questions to ask:</b><ul>{questionList}</ul></div>
             <div className='row'>
-              <div className='eight columns'><b>Questions to ask:</b><ul>{questionList}</ul></div>
-              <div className="four columns"><b>Keywords:</b><ul>{keywordList}</ul></div>
-              </div>
-            <div className='row'>
-              <div className="one-half column"><b>Dark Meanings:</b><ul>{shadowList}</ul></div>
-              <div className="one-half column"><span style={{textAlign:"center"}}><b>Light Meanings:</b></span><ul>{lightList}</ul></div>
-
+              <div className="one-third column"><div className='centered'><b>Light Meanings:</b></div><ul>{lightList}</ul></div>
+              <div className="one-third column"><div className='centered'><b>Dark Meanings:</b></div><ul>{shadowList}</ul></div>
+              <div className="one-third-column"><div className='centered'><b>Keywords:</b></div><ul>{keywordList}</ul></div>
             </div>
+            
           </div>
           
 
