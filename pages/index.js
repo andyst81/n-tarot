@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Tarot from "../components/tarot"
+import Layout from '../components/Layout'
 
 
 class Home extends React.Component {
@@ -27,7 +28,7 @@ class Home extends React.Component {
       show = <Tarot />
       button = "Ask another question"
     } else {
-      button = "Bring Card"
+      button = "Show Card"
     }
     return (
       <div className='container'>
@@ -37,12 +38,14 @@ class Home extends React.Component {
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Merriweather" rel="stylesheet" />      
         </Head>
+        <Layout>
         <br />
         <h3 className="heading">Ask a question outloud and press the button below to generate one card to answer the question.</h3>
         <p className="heading">An interpretation of the meaning of the card will appear below it.</p>
         <button className="button-success pure-button" onClick={this.buttonClick}>{button}</button>
         <br/>
         {show}
+        </Layout>
       </div>
     )
   }

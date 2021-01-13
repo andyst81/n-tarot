@@ -1,5 +1,4 @@
 import useSWR from 'swr';
-import Layout from '../components/Layout';
 
 export default function Tarot() {
     function fetcher(url) {
@@ -24,6 +23,11 @@ export default function Tarot() {
       fortuneList.push(<p key={x}>{fortune[x]}</p>)
     }
   
+    let questionList = []
+    for (var q in questions) {
+      questionList.push(<li key={q}>{questions[q]}</li>)
+    }
+    
     let keywordList = []
     for (var y in keywords) {
       let mid = keywords[y]
@@ -41,14 +45,8 @@ export default function Tarot() {
       shadowList.push(<li key={d}>{shadow[d]}</li>)
     }
   
-    let questionList = []
-    for (var q in questions) {
-      questionList.push(<li key={q}>{questions[q]}</li>)
-    }
-
   return(
-    <Layout>
-      <div className="container">
+      <div className="">
         <main className="">
           <div>
             <img style={{display: "flex", margin:"auto", alignItems:"center", justifyContent:"center"}} src={image} />
@@ -57,9 +55,9 @@ export default function Tarot() {
             <div style={{textAlign:"center"}}><h5>{fortuneList}</h5></div>
             <div className=''><b>Questions to ask:</b><ul>{questionList}</ul></div>
             <div className='row'>
+              <div className="one-third column"><div className='centered'><b>Keywords:</b></div><ul>{keywordList}</ul></div>
               <div className="one-third column"><div className='centered'><b>Light Meanings:</b></div><ul>{lightList}</ul></div>
               <div className="one-third column"><div className='centered'><b>Dark Meanings:</b></div><ul>{shadowList}</ul></div>
-              <div className="one-third-column"><div className='centered'><b>Keywords:</b></div><ul>{keywordList}</ul></div>
             </div>
             
           </div>
@@ -67,7 +65,6 @@ export default function Tarot() {
 
         </main>
       </div>
-    </Layout>
   )
 }
 
