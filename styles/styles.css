@@ -16,5 +16,9 @@
 
 .centered {
   text-align: center;
+  margin-bottom: 1rem;
 }
 
+.left {
+  margin-bottom: 1rem;
+}

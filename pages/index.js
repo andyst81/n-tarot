@@ -26,7 +26,7 @@ class Home extends React.Component {
     let button
     if (cardShow) {
       show = <Tarot />
-      button = "Ask another question"
+      button = "Ask Another"
     } else {
       button = "Show Card"
     }
@@ -40,8 +40,12 @@ class Home extends React.Component {
         </Head>
         <Layout>
         <br />
-        <h3 className="heading">Ask a question outloud and press the button below to generate one card to answer the question.</h3>
-        <p className="heading">An interpretation of the meaning of the card will appear below it.</p>
+        <h1 className='heading'>One Tarot Card Reading</h1>
+        <br />
+        <h3 className="heading">Ask a question outload and press the button below.</h3>
+        <p className="heading">A card will be shown to answer your question. There will be an interpretation of the card meaning below it.
+        <br/> If you would like to ask another question, press the "Ask Another Question" button, ask again and press the "Show Card" button again. 
+        <br/>There may be a very short delay before the new card appears - this is normal.</p>
         <button className="button-success pure-button" onClick={this.buttonClick}>{button}</button>
         <br/>
         {show}
