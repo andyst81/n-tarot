@@ -42,10 +42,12 @@ class Home extends React.Component {
         <br />
         <h1 className='heading'>One Tarot Card Reading</h1>
         <br />
-        <h3 className="heading">Ask a question outload and press the button below.</h3>
-        <p className="heading">A card will be shown to answer your question. There will be an interpretation of the card meaning below it.
-        <br/> If you would like to ask another question, press the "Ask Another Question" button, ask again and press the "Show Card" button again. 
-        <br/>There may be a very short delay before the new card appears - this is normal.</p>
+        <h3 className="heading">Ask a question outload and press the button below</h3>
+        <p className=''>A card will be shown to answer your question. There will be an interpretation of the card meaning below it.
+          <br/> If you would like to ask another question, press the "Ask Another Question" button, ask the new question outloud and press the "Show Card" button again. 
+          <br/>There may be a very short delay before the new card appears - this is normal.
+          <br/> This tool can be used as often as necessary, and you can ask multiple questions in any sitting. Alternatively, return daily to just ask "How will my day be today?"
+        </p>
         <button className="button-success pure-button" onClick={this.buttonClick}>{button}</button>
         <br/>
         {show}
