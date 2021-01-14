@@ -9,6 +9,15 @@
   border: none;
 }
 
+.button-success:hover {
+  background-color: #DE29B4;
+  color: white;
+}
+
+.button-success:focus, .button-success:visited, .button-success:active {
+  color: white;
+}
+
 .heading {
   font-family: 'Merriweather';
   text-align: center;
